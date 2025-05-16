@@ -1,6 +1,6 @@
-# 🎵 SongEval: Aesthetic Evaluation Toolkit for Complete Songs
+# 🎵 SongEval: A Benchmark Dataset for Song Aesthetics Evaluation
 
-This repository provides a **trained aesthetic evaluation toolkit** based on [SongEval](https://huggingface.co/datasets/ASLP-lab/SongEval), the first large-scale, open-source dataset for human-perceived song aesthetics. The toolkit enables **automatic scoring of generated music** across five perceptual dimensions aligned with professional musician judgments.
+This repository provides a **trained aesthetic evaluation toolkit** based on [SongEval](https://huggingface.co/datasets/ASLP-lab/SongEval), the first large-scale, open-source dataset for human-perceived song aesthetics. The toolkit enables **automatic scoring of generated song** across five perceptual aesthetic dimensions aligned with professional musician judgments.
 
 ---
 
@@ -14,7 +14,7 @@ This repository provides a **trained aesthetic evaluation toolkit** based on [So
   - Clarity of Song Structure
   - Overall Musicality
 <!-- - 🧪 Supports **batch evaluation** for model benchmarking -->
-- 🎧 Accepts **complete songs** (vocals + accompaniment) as input
+- 🎧 Accepts **full-length songs** (vocals + accompaniment) as input
 - ⚙️ Simple inference interface
 
 ---
@@ -30,6 +30,11 @@ pip install -r requirements.txt
 ```
 
 ## 🚀 Quick Start
+
+## 🙏 Acknowledgement
+
+We sincerely thank the **Shanghai Conservatory of Music** for their expert guidance on music theory, aesthetics, and annotation design.
+<p align="center"> <img src="assets/sy_logo.jpg" alt="Shanghai Conservatory of Music Logo" width="200"/> </p>
 
 ## 📑 License
 This project is released under the CC BY-NC-SA 4.0 license. 

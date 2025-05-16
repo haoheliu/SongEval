@@ -49,20 +49,19 @@ class Synthesizer(object):
             else:
                 with open(self.input_path, "r") as f:
                     lines = [line for line in f]
-            input_dic = [{
+            input_files = [{
                 "input_path": line.strip(), 
             } for line in lines]
             print(f"input filelst: {self.input_path}")
         elif os.path.isdir(self.input_path):
-            input_dic = [{
+            input_files = [{
                 "input_path": file,
-            } for file in glob.glob(self.input_path + '/*')]
-            print(f"input directory: {self.input_path}")
+            }for file in glob.glob(os.path.join(self.input_path, '*')) if file.lower().endswith(('.wav', '.mp3'))]
         else:
             raise ValueError(f"input_path {self.input_path} is not a file or directory")
         
         
-        for input in tqdm(input_dic):
+        for input in tqdm(input_files):
             self.handle(**input)
         with open(os.path.join(self.output_dir, "result.json") , "w")as f:
             json.dump(self.result_dcit, f, indent=4, ensure_ascii=False)

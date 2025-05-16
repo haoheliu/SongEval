@@ -31,6 +31,32 @@ pip install -r requirements.txt
 
 ## 🚀 Quick Start
 
+- Evaluate a single audio file:
+
+```bash
+python eval.py -i /path/to/audio.mp3 -o /path/to/output
+```
+
+- Evaluate a list of audio files:
+
+```bash
+python eval.py -i /path/to/audio_list.txt -o /path/to/output
+```
+
+- Evaluate all audio files in a directory:
+
+```bash
+python eval.py -i /path/to/audio_directory -o /path/to/output
+```
+
+- Force evaluation on CPU  (⚠️ CPU evaluation may be significantly slower) :
+
+
+```bash
+python eval.py -i /path/to/audio.wav -o /path/to/output --use_cpu
+```
+
+
 ## 🙏 Acknowledgement
 
 We sincerely thank the **Shanghai Conservatory of Music** for their expert guidance on music theory, aesthetics, and annotation design.

@@ -58,9 +58,12 @@ python eval.py -i /path/to/audio.wav -o /path/to/output --use_cpu
 
 
 ## 🙏 Acknowledgement
+This project is mainly organized by the audio, speech and language processing lab [(ASLP@NPU)](http://www.npu-aslp.org/).
 
 We sincerely thank the **Shanghai Conservatory of Music** for their expert guidance on music theory, aesthetics, and annotation design.
-<p align="center"> <img src="assets/sy_logo.jpg" alt="Shanghai Conservatory of Music Logo" width="200"/> </p>
+Meanwhile, we thank AISHELL to help with the orgnization of the song annotations.
+
+<p align="center"> <img src="assets/logo.png" alt="Shanghai Conservatory of Music Logo"/> </p>
 
 ## 📑 License
 This project is released under the CC BY-NC-SA 4.0 license. 

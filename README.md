@@ -1,5 +1,10 @@
 # 🎵 SongEval: A Benchmark Dataset for Song Aesthetics Evaluation
 
+[![Hugging Face Dataset](https://img.shields.io/badge/HuggingFace-Dataset-blue)](https://huggingface.co/datasets/ASLP-lab/SongEval)
+[![Arxiv Paper](https://img.shields.io/badge/arXiv-Paper-<COLOR>.svg)](https://arxiv.org/pdf/2505.10793)
+[![License: CC BY-NC-SA 4.0](https://img.shields.io/badge/License-CC%20BY--NC--SA%204.0-lightgrey.svg)](https://creativecommons.org/licenses/by-nc-sa/4.0/)  
+
+
 This repository provides a **trained aesthetic evaluation toolkit** based on [SongEval](https://huggingface.co/datasets/ASLP-lab/SongEval), the first large-scale, open-source dataset for human-perceived song aesthetics. The toolkit enables **automatic scoring of generated song** across five perceptual aesthetic dimensions aligned with professional musician judgments.
 
 ---
@@ -73,11 +78,11 @@ You are free to use, modify, and build upon it for non-commercial purposes, with
 ## 📚 Citation
 If you use this toolkit or the SongEval dataset, please cite the following:
 ```
-@inproceedings{SongEval,
-  title     = {SongEval: A Large-Scale Benchmark Dataset for Aesthetic Evaluation of Complete Songs},
-  author    = {...},
-  booktitle = {...},
-  year      = {2025}
+@article{yao2025songeval,
+  title   = {SongEval: A Benchmark Dataset for Song Aesthetics Evaluation},
+  author  = {Yao, Jixun and Ma, Guobin and Xue, Huixin and Chen, Huakang and Hao, Chunbo and Jiang, Yuepeng and Liu, Haohe and Yuan, Ruibin and Xu, Jin and Xue, Wei and others},
+  journal = {arXiv preprint arXiv:2505.10793},
+  year={2025}
 }
 
 ```

@@ -58,7 +58,7 @@ python eval.py -i /path/to/audio_directory -o /path/to/output
 
 
 ```bash
-python eval.py -i /path/to/audio.wav -o /path/to/output --use_cpu
+python eval.py -i /path/to/audio.wav -o /path/to/output --use_cpu True
 ```
 
 

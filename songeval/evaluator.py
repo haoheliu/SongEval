@@ -120,7 +120,7 @@ class SongEvaluator:
         
         for audio_path in audio_paths:
             try:
-                file_id = os.path.basename(audio_path).split('.')[0]
+                file_id = os.path.basename(audio_path)
                 scores = self.evaluate_song(audio_path)
                 results[file_id] = scores
             except Exception as e:

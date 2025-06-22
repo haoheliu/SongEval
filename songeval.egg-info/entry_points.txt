@@ -1,0 +1,2 @@
+[console_scripts]
+songeval = songeval.cli:main

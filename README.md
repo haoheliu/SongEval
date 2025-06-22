@@ -21,10 +21,23 @@ This repository provides a **trained aesthetic evaluation toolkit** based on [So
 <!-- - 🧪 Supports **batch evaluation** for model benchmarking -->
 - 🎧 Accepts **full-length songs** (vocals + accompaniment) as input
 - ⚙️ Simple inference interface
+- 📦 **Installable Python package** for easy integration
 
 ---
 
 ## 📦 Installation
+
+### Option 1: Install as Python Package (Recommended)
+
+Install the package in development mode:
+
+```bash
+git clone https://github.com/ASLP-lab/SongEval.git
+cd SongEval
+pip install -e .
+```
+
+### Option 2: Manual Installation
 
 Clone the repository and install dependencies:
 
@@ -34,33 +47,102 @@ cd SongEval
 pip install -r requirements.txt
 ```
 
+---
+
 ## 🚀 Quick Start
+
+### Using the Python Package
+
+```python
+import songeval
+
+# Evaluate a single song (model loaded automatically on first use)
+scores = songeval.evaluate_song("path/to/your/song.wav")
+print(scores)
+# Output: {'Coherence': 3.2456, 'Musicality': 3.1234, 'Memorability': 2.9876, 'Clarity': 3.4567, 'Naturalness': 3.1111}
+
+# Evaluate multiple songs efficiently (model loaded once and reused)
+evaluator = songeval.get_evaluator()
+results = evaluator.evaluate_songs(["song1.wav", "song2.mp3", "song3.wav"])
+print(results)
+
+# Force CPU mode if needed
+scores = songeval.evaluate_song("path/to/song.wav", use_cpu=True)
+```
+
+### Using Command Line Interface
 
 - Evaluate a single audio file:
 
 ```bash
-python eval.py -i /path/to/audio.mp3 -o /path/to/output
+songeval -i /path/to/audio.mp3 -o /path/to/output
 ```
 
 - Evaluate a list of audio files:
 
 ```bash
-python eval.py -i /path/to/audio_list.txt -o /path/to/output
+songeval -i /path/to/audio_list.txt -o /path/to/output
 ```
 
 - Evaluate all audio files in a directory:
 
 ```bash
-python eval.py -i /path/to/audio_directory -o /path/to/output
+songeval -i /path/to/audio_directory -o /path/to/output
 ```
 
-- Force evaluation on CPU  (⚠️ CPU evaluation may be significantly slower) :
-
+- Force evaluation on CPU (⚠️ CPU evaluation may be significantly slower):
 
 ```bash
-python eval.py -i /path/to/audio.wav -o /path/to/output --use_cpu True
+songeval -i /path/to/audio.wav -o /path/to/output --use_cpu
 ```
 
+### Using the Original Script
+
+```bash
+python eval.py -i /path/to/audio.mp3 -o /path/to/output
+```
+
+---
+
+## 📚 API Reference
+
+### `songeval.evaluate_song(audio_path, use_cpu=False)`
+
+Evaluate a single song file efficiently.
+
+**Parameters:**
+- `audio_path` (str): Path to the audio file (.wav or .mp3)
+- `use_cpu` (bool): Force CPU mode even if GPU is available
+
+**Returns:**
+- `dict`: Dictionary with scores for each dimension:
+  - 'Coherence': Overall Coherence score
+  - 'Musicality': Overall Musicality score  
+  - 'Memorability': Memorability score
+  - 'Clarity': Clarity of Song Structure score
+  - 'Naturalness': Naturalness of Vocal Breathing and Phrasing score
+
+### `songeval.get_evaluator(use_cpu=False)`
+
+Get a global evaluator instance. The model is loaded only once and reused.
+
+**Parameters:**
+- `use_cpu` (bool): Force CPU mode even if GPU is available
+
+**Returns:**
+- `SongEvaluator`: The evaluator instance
+
+### `SongEvaluator.evaluate_songs(audio_paths)`
+
+Evaluate multiple song files efficiently.
+
+**Parameters:**
+- `audio_paths` (list): List of paths to audio files
+
+**Returns:**
+- `dict`: Dictionary mapping file IDs to their scores
+
+---
 
 ## 🙏 Acknowledgement
 This project is mainly organized by the audio, speech and language processing lab [(ASLP@NPU)](http://www.npu-aslp.org/).
